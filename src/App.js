@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Navbar from './components/Navbar';
+import Artistic from './components/Artistic';
+import AddSubs from './components/AddSubs';
+import AllSubs from './components/AllSubs';
+import UrlErr from './components/UrlErr';
+import {BrowserRouter as Router , Routes, Route} from 'react-router-dom';
+import EditUser from './components/EditUser';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Artistic />} />
+        <Route path='/all' element={<AllSubs />} />
+        <Route path='/add' element={<AddSubs/>} />
+        <Route path='/*' element={<UrlErr />} />
+        <Route path='/edit/:id' element={<EditUser/>}/>
+      </Routes>
+    </Router>
+  )
 }
 
 export default App;
