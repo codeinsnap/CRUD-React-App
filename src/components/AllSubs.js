@@ -21,8 +21,7 @@ const useStyle = makeStyles({
 
     row : {
         '& > *' : {
-            // background: '#000000',
-            // color: '#ffffff',
+       
             fontSize: 20
         }
     },
@@ -37,27 +36,18 @@ const useStyle = makeStyles({
         color: "#ffffff",
         marginRight: 10
     },
-    // sbutton1 :{
-    //     background: "#000000",
-    //     color: "#000000",
-    //     marginRight: 10
-    // }
+
 })
 
 
 function AllSubs()  {
 
-    // const [ users, setUsers] = useState([]); 
-    
+   
     const [ userData, setUserData] = useState([]); 
 
     useEffect(()=>{
         getAllUsers();
-    // getUsers().then((res) => {const Data = res
-    //  // setUserData(Data)
-    // }  ).catch((e)=> console.log(e))
-
-        // console.log("Hi", Data)
+  
     }, [])
 
     const getAllUsers= async()=>{
@@ -65,16 +55,7 @@ function AllSubs()  {
      setUserData(Data)
     }
 
-    // const getAllUsers = async()=>{
-    //   const response= await getUsers();
-    //   console.log(response.data);
-    //   setUsers(response.data);
-    // } the above code was no working 
-
-
-    // console.log("inside AllSubs")
-    // console.log("My user data", userData)
-    // console.log("My user data 2", userData.data)
+)
 
     const classes = useStyle();
 
