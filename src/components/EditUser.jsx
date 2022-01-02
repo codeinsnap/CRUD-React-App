@@ -3,9 +3,6 @@ import React, {useState , useEffect, Component} from 'react';
 import {editUser, getUsers} from '../Service/api';
 import { Link, useParams } from 'react-router-dom';
 
-
-
-
 const useStyle = makeStyles({
     container : {
         width:"50%",
@@ -45,10 +42,6 @@ const EditUser = () =>{
     }
     console.log("this is user", user)
 
-    // const loadUserData = async ()=>{
-    //     const response = await getUsers1(id);
-    //     setUser(response.dataa);
-    // }
     const onValueChange =(e) =>{
         setUser({...user, [e.target.name]: e.target.value})
     }
@@ -57,7 +50,6 @@ const EditUser = () =>{
         await editUser(id, user);
     }
 
-    
     
     return (
         <div>
