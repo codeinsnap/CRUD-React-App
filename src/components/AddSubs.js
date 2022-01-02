@@ -3,11 +3,6 @@ import React, {useState} from 'react';
 import {addUser} from '../Service/api';
 import {Link } from 'react-router-dom'
 
-
-
-
-
-
 const useStyle = makeStyles({
     container : {
         width:"50%",
@@ -34,13 +29,11 @@ const AddUser = () =>{
     
     const onValueChange =(e) =>{
         setUser({...user, [e.target.name]: e.target.value});
-      
-      
+        
     }
 
     const addUserDetail = async()=> {
-        await addUser(user)
-       
+        await addUser(user) 
     }
     
     return (
